@@ -23,6 +23,6 @@ public class MyStepDefs {
 
     @Then("the response should contain {string}")
     public void the_response_should_contain(String key) {
-        assertThat(response.getBody().asString(), containsString(key));
+        response.then().body("$", hasKey(key));
     }
 }
