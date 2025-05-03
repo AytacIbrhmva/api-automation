@@ -24,6 +24,6 @@ public class MyStepDefs {
     @Then("the response should contain")
     public void the_response_should_contain(String expectedBody) {
        String actualBody = response.getBody().asString();
-       assertThat(actualBody.trim(), equalTo(actualBody.trim()));
+       assertThat(actualBody.trim(), equalTo(expectedBody.trim()));
     }
 }
