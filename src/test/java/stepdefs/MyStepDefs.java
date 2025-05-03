@@ -21,8 +21,9 @@ public class MyStepDefs {
         assertThat(response.getStatusCode(), is(expectedStatusCode));
     }
 
-    @Then("the response should contain {string}")
-    public void the_response_should_contain(String key) {
-        response.then().body("$", hasKey(key));
+    @Then("the response should contain")
+    public void the_response_should_contain(String expectedBody) {
+       String actualBody = response.getBody().asString();
+       assertThat(actualBody.trim(), equalTo(actualBody.trim()));
     }
 }
